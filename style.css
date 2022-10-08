@@ -167,14 +167,57 @@ nav {
   
     box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
     transition: 0.2s all;
-  }
+}
   
-  .hero-text button:hover {
+.hero-text button:hover {
   background-color: #631217 ;
-  }
+}
   
-  .hero-text button:active {
+.hero-text button:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba (0, 0, 0, 0.24);
-  }
+}
   
+  /* SERVICIOS */
+
+.servicios-container {
+    padding: 2em 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+  
+.icon-container {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #fff;
+    
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, .5);
+    
+    padding: 1.5em;
+
+    text-align: center;    
+}
+
+.icon-container:hover {
+    background-color: #631217 ;
+
+}
+.icon-container i{
+    
+    font-size: 2.5rem;
+    color: #333;
+       
+    padding: 1em;
+    transition: transform 1s;
+    
+}
+
+.icon-container:hover i,
+.icon-container:hover p {
+    color: #fff;
+    transform: rotateY(360deg);
+}

@@ -221,3 +221,58 @@ nav {
     color: #fff;
     transform: rotateY(360deg);
 }
+
+
+.novedades {
+    padding: 3rem 0;
+}
+
+.novedades h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.novedades p {
+    line-height: 1.5;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 60px;
+    margin: 20px auto;
+}
+
+article {
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 1.2rem;
+
+}
+
+article img {
+    width: 60%;
+    margin: 0 auto;
+   border-radius: 50%;
+}
+
+.novedades-texto {
+    padding: .5rem 0;
+    margin-top: 2em;
+    height: 12rem;
+    display: grid;
+    grid-template-rows: 15% 60% 15%;
+    text-align: center; 
+    justify-items: center;
+    gap: 1rem;
+    
+}
+
+.btn {
+    
+    color: #fff;
+    background-color: #631217;
+    border-radius: 30px;
+    padding: .3em 1.5em;
+}

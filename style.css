@@ -276,3 +276,33 @@ article img {
     border-radius: 30px;
     padding: .3em 1.5em;
 }
+
+
+
+.nosotros {
+    background-color: rgba(54, 53, 53, 0.774);
+    background-image: url(./assets/local.jpg);
+    background-position: center;
+    background-blend-mode: multiply;
+
+    margin: 3em 0;
+
+}
+
+.nosotros-texto {
+    margin: 0 auto;
+    padding: 3em;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    color: #fff;
+}
+
+.nosotros-texto p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 2;
+    line-height: 1.2;
+}
+

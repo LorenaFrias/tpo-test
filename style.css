@@ -249,9 +249,20 @@ article {
     border-radius: 20px;
     padding: 1.2rem;
 
+    /* animation observer */
+    transform: translateX(50px);
+    opacity: 0;
+    transition: 1500ms;
+
+
 }
 
-article img {
+article.show {
+    transform: translateX(0);
+    opacity: 1;
+  } 
+
+.novedades img {
     width: 60%;
     margin: 0 auto;
    border-radius: 50%;
@@ -305,4 +316,10 @@ article img {
     letter-spacing: 2;
     line-height: 1.2;
 }
+
+/* PRODUCTOS */
+
+
+
+
 

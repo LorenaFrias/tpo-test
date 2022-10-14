@@ -1,4 +1,4 @@
-// ANIMACION NOVEDADES
+// ANIMACION NOVEDADES & PRODUCTOS
 
 const slides = document.querySelectorAll('.slide')
 

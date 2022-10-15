@@ -27,3 +27,19 @@ window.addEventListener('scroll', () => {
         scrollBtn.style.display = 'none';
     }
 })
+
+// READ MORE PRODUCTOS
+
+let btn = document.querySelectorAll('.more-btn');
+
+let text = document.querySelectorAll('.more-text');
+
+btn.forEach((elemento,clave)=>{
+    elemento.addEventListener('click', ()=>{
+        if (text[clave].classList.contains('active')){
+            text[clave].classList.remove('active')
+        }else {
+            text[clave].classList.add('active')
+        }
+    })
+});

@@ -43,3 +43,54 @@ btn.forEach((elemento,clave)=>{
         }
     })
 });
+
+// VALIDACION FORMULARIO
+
+let form = document.querySelector('form');
+let nombre = document.querySelector('#name');
+let mail = document.querySelector('#email');
+let message = document.querySelector('#message');
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (nombre.value.trim() ===''){
+        msgError(nombre, 'Ingrese su nombre, por favor.')
+    } else {
+        msgExito(nombre)
+    }
+
+    if(mail.value.trim() === '') {
+        msgError(mail, 'Ingrese su email, por favor.')
+    } else if (isEmail(mail.value.trim())) {
+        msgExito(mail)
+        
+    } else {
+        msgError(mail, 'El email no es válido.')
+        
+    }
+
+})
+
+function msgError(element, mensaje) {
+    element.style.border = '2px solid red';
+
+    let control = element.parentElement;
+    let small = control.querySelector('small');
+
+    small.textContent = mensaje;
+    small.style.visibility = 'visible';
+}
+
+function msgExito(element){
+    element.style.border = '2px solid green';
+
+    let control = element.parentElement;
+    let small = control.querySelector('small');
+
+    small.style.visibility = 'hidden';
+}
+
+function isEmail(mail) {
+    let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(mail);
+}

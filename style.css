@@ -637,5 +637,88 @@ footer {
 }
 
 
+/* MEDIA QUERIES */
 
+@media screen and (max-width: 980px) {
+
+    .servicios-container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+    .art {
+      grid-column: span 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .grid-prod-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .more-text p {
+        font-size: 1.2rem;
+    }
+
+    .contacto-container {
+        grid-template-rows: 50% 30%;
+        grid-template-areas: 
+        "form form"
+        "info mapa";
+    }
+
+    .footer-navbar {
+        flex-wrap: wrap;
+    }
+  }
+  
+  @media screen and (max-width: 460px) {
+
+    .servicios-container {
+        grid-template-columns: 1fr;
+    }
+    .art {
+      display: block;
+      margin: 0 20px;
+    }
+
+    .grid-prod-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 80%;
+    }
+
+    .more-text p {
+        font-size: 1.2rem;
+    }
+
+    .contacto-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .links {
+        margin-top: 1em;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+                
+    }
+
+    .footer-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+  }
+  
 

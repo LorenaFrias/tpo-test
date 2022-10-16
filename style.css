@@ -161,13 +161,13 @@ nav {
   
     background-color: transparent;
     cursor: pointer;
-    margin-top: 2em;
+    margin-top: 1em;
     padding: .7em 1.8em;
     border: 1px solid #fff;
     border-radius: 50px;
     
   
-    font-family: 'Quattrocento Sans', sans-serif;;
+    font-family: 'Quattrocento Sans', sans-serif;
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
@@ -233,6 +233,7 @@ nav {
     transform: rotateY(360deg);
 }
 
+/* NOVEDADES */
 
 .novedades {
     padding: 3rem 0;
@@ -283,7 +284,7 @@ nav {
 
 .novedades-texto {
     padding: .5rem 0;
-    margin-top: 2em;
+    /* margin-top: 2em; */
     height: 12rem;
     display: grid;
     grid-template-rows: 15% 60% 15%;
@@ -326,7 +327,7 @@ nav {
 .nosotros-texto p {
     font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: 2;
+    letter-spacing: 1px;
     line-height: 1.2;
 }
 
@@ -360,7 +361,7 @@ article {
     
     border: 2px solid #eee;
     border-radius: 20px;
-    padding: 1.2rem;
+    padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 /* animation observer */
@@ -391,7 +392,7 @@ article {
 
 
 .card h2 {
-    font-size: 32px;
+    font-size: 2rem;
     margin-bottom: 20px;
 
 }
@@ -429,7 +430,7 @@ article {
     height: 100%;
     background-color: var(--main-color);
         
-    padding: 30px;
+    padding: 2em 1em;
     overflow-y: auto;
     transition: all ease 0.7s;
 }
@@ -438,9 +439,9 @@ article {
     color: #fff;
     font-weight: 500;
     font-size: 1.5rem;
-    line-height: 2;
-    letter-spacing: 3;
-    padding: 2em;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    padding: 1.5em;
     text-align: center;
 }
 .active {
@@ -476,6 +477,11 @@ article {
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+
+.control small {
+    display: block;
+    visibility: hidden;
 }
 
 .info {
@@ -534,6 +540,7 @@ input, textarea {
 input[type="submit"] {
     background-color: var(--accent-color);
     color: #fff;
+    font-family: 'Quattrocento Sans', sans-serif;
     font-weight: bold;
     font-size: 1rem;
     border: none;
@@ -619,16 +626,17 @@ footer {
 
 .scrollup {
     cursor: pointer;
-    color: #fff;
-    background-color: var(--main-color);
-    border-radius: 50%;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    background: none;
+    border-radius: 4px;
     font-size: 1.2rem;
-    font-weight: 700;
     padding: 10px;
     position: fixed;
     bottom: 20px;
     right: 20px;
     display: none;
+    z-index: 10;
 }
 
 .scrollup:hover {
@@ -643,13 +651,23 @@ footer {
 
     .servicios-container {
         grid-template-columns: repeat(2, 1fr);
+        margin: 10px;
 
     }
+
+    .icon-container {
+        flex-wrap: wrap;
+    }
+
+    .icon-container > * {
+        flex: 1 0 80%;
+    }
+
     .art {
       grid-column: span 3;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 60px;
+      /* gap: 60px; */
       align-items: center;
     }
 
@@ -681,6 +699,7 @@ footer {
     .servicios-container {
         grid-template-columns: 1fr;
     }
+
     .art {
       display: block;
       margin: 0 20px;

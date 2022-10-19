@@ -94,3 +94,44 @@ function isEmail(mail) {
     let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(mail);
 }
+
+// API REST
+
+function getData(){
+    fetch('https://randomuser.me/api/?results=3&nat=es')
+    .then(res => res.json())
+    .then(data => {
+        let author = data.results;
+        let output = '';
+        author.forEach(function(lists) {
+            output +=
+            `
+            
+                <li id="cliente-opinion">
+                <img id="image" src="${lists.picture.large}" alt="">
+                <blockquote>"${getRandomReview()}"</blockquote>
+                <p id="name">${lists.name.first}</p>
+                
+                </li>
+            
+            `
+        });
+        document.getElementById('opiniones').innerHTML = output;
+    })
+    }
+    
+    getData();
+    
+    let reviews = [
+        'Excelente atención',
+        'Productos premium',
+        'Algo para cada ocasión',
+        'Gracias por la dedicación!',
+        'Volveré pronto!',
+        'Conseguí lo que buscaba y más!'
+    ]
+    
+    function getRandomReview () {
+        let review = reviews[Math.floor(Math.random() * reviews.length)];
+        return review
+    }

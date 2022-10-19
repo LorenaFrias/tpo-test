@@ -448,6 +448,62 @@ article {
     bottom: 0;
 }
 
+/* API REST */
+
+.clientes {
+    margin: 5em 0;
+}
+
+blockquote {
+    margin-top: 1em;
+    font-size: 1.2rem;
+}
+
+.clientes h2 {
+    text-align: center;
+}
+
+.clientes ul {
+
+    color: #333;
+    margin-top: 5em;
+     display: flex;
+    /*flex-direction: row; */
+}
+
+.clientes li {
+  
+    background-color: #cde2d9; 
+    border: 1px solid #eee;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+    text-align: center;
+    padding: 2em 1em;
+    width: 80%;
+    /* margin: 0 auto 5em; */
+    margin: 0 1em;
+    border-radius: 1em;
+
+}
+
+.clientes img {
+    width: 8em;
+    height: 8em;
+    background-color: aliceblue;
+    border-radius: 50%; 
+    margin: 0 auto;
+    margin-top: -5.5em;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.cliente-opinion cite {
+    margin-top: 2em;
+}
+
 
 /* CONTACTO */
 
@@ -680,6 +736,16 @@ footer {
 
     .more-text p {
         font-size: 1.2rem;
+    }
+
+    #opiniones {
+        /* display: flex; */
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    #opiniones li {
+        margin: 0 auto;
     }
 
     .contacto-container {

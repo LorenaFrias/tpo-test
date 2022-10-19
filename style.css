@@ -60,13 +60,25 @@ header {
     background-blend-mode: overlay;
     position: relative;
 }
+
+.hamburger {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
   
 nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     padding: 1.2em;
-    background-color: rgba(0, 0, 0, 0.308);
+    background-color: rgba(0, 0, 0, 0.708);
 }
 
 .navbar {
@@ -80,12 +92,12 @@ nav {
 
 .navbar li {
     margin-left: 16px;
-    position: relative;
+    /* position: relative;
     z-index: 2;
-    transition: color 0.5ms;
+    transition: color 0.5ms; */
 }
 
-.navbar li::before {
+/* .navbar li::before {
     content: '';
     background-color: var(--main-color);
 
@@ -98,22 +110,29 @@ nav {
     z-index: -1;
     opacity: 0;
     transition: top 0.5s, opacity 0.5s;
-}
+} */
 
-.navbar li:hover {
+/* .navbar li:hover {
     color: #fff;
 }
 
 .navbar li:hover::before {
     top: 50%;
     opacity: 1;
-}
+} */
 
 .navbar a {
     
     padding: .7em 1.25em;
+    letter-spacing: 1px;
+    transition: all 1s ease;
 }
 
+.navbar a:hover {
+   
+    text-transform: uppercase;
+
+}
 
 .hero-text {
     background-color: rgba(0, 0, 0, 0.6);
@@ -451,7 +470,7 @@ article {
 /* API REST */
 
 .clientes {
-    margin: 5em 0;
+    margin: 15rem 0;
 }
 
 blockquote {
@@ -759,8 +778,55 @@ footer {
         flex-wrap: wrap;
     }
   }
+
+  @media screen and (min-width: 461px) and (max-width: 730px){
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+   
+    .navbar.show {
+        display: flex;
+
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .navbar li {
+        margin-top: .75em;
+    }
+
+  }
   
   @media screen and (max-width: 460px) {
+
+    nav {
+        background-color: rgba(0, 0, 0, .708);
+        flex-wrap: wrap;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        
+    }
+   
+    .navbar.show {
+        display: flex;
+
+    }
+    .hamburger {
+        display: block;
+    }
+
+    .navbar li {
+        margin-top: .75em;
+    }
 
     .servicios-container {
         grid-template-columns: 1fr;

@@ -116,7 +116,7 @@ function myFunction() {
     form.reset();
 }
 
-API REST
+// API REST
 
 function getData(){
     fetch('https://randomuser.me/api/?results=3&nat=es')

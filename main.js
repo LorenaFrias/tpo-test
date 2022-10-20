@@ -116,32 +116,32 @@ function myFunction() {
     form.reset();
 }
 
-// API REST
+API REST
 
-// function getData(){
-//     fetch('https://randomuser.me/api/?results=3&nat=es')
-//     .then(res => res.json())
-//     .then(data => {
-//         let author = data.results;
-//         let output = '';
-//         author.forEach(function(lists) {
-//             output +=
-//             `
+function getData(){
+    fetch('https://randomuser.me/api/?results=3&nat=es')
+    .then(res => res.json())
+    .then(data => {
+        let author = data.results;
+        let output = '';
+        author.forEach(function(lists) {
+            output +=
+            `
             
-//                 <li id="cliente-opinion">
-//                 <img id="image" src="${lists.picture.large}" alt="">
-//                 <blockquote>"${getRandomReview()}"</blockquote>
-//                 <p id="name">${lists.name.first}</p>
+                <li id="cliente-opinion">
+                <img id="image" src="${lists.picture.large}" alt="">
+                <blockquote>"${getRandomReview()}"</blockquote>
+                <p id="name">${lists.name.first}</p>
                 
-//                 </li>
+                </li>
             
-//             `
-//         });
-//         document.getElementById('opiniones').innerHTML = output;
-//     })
-//     }
+            `
+        });
+        document.getElementById('opiniones').innerHTML = output;
+    })
+    }
     
-//     getData();
+    getData();
     
     let reviews = [
         'Excelente atención',

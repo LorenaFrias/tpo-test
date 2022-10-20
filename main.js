@@ -78,6 +78,14 @@ form.addEventListener('submit', (e) => {
         
     }
 
+    if (message.value.trim() === "") {
+        msgError(message, 'Escriba un comentario o pregunta por favor')
+    } else {
+        msgExito(message)
+    }
+
+    myFunction();
+
 })
 
 function msgError(element, mensaje) {
@@ -104,32 +112,36 @@ function isEmail(mail) {
     return re.test(mail);
 }
 
+function myFunction() {
+    form.reset();
+}
+
 // API REST
 
-function getData(){
-    fetch('https://randomuser.me/api/?results=3&nat=es')
-    .then(res => res.json())
-    .then(data => {
-        let author = data.results;
-        let output = '';
-        author.forEach(function(lists) {
-            output +=
-            `
+// function getData(){
+//     fetch('https://randomuser.me/api/?results=3&nat=es')
+//     .then(res => res.json())
+//     .then(data => {
+//         let author = data.results;
+//         let output = '';
+//         author.forEach(function(lists) {
+//             output +=
+//             `
             
-                <li id="cliente-opinion">
-                <img id="image" src="${lists.picture.large}" alt="">
-                <blockquote>"${getRandomReview()}"</blockquote>
-                <p id="name">${lists.name.first}</p>
+//                 <li id="cliente-opinion">
+//                 <img id="image" src="${lists.picture.large}" alt="">
+//                 <blockquote>"${getRandomReview()}"</blockquote>
+//                 <p id="name">${lists.name.first}</p>
                 
-                </li>
+//                 </li>
             
-            `
-        });
-        document.getElementById('opiniones').innerHTML = output;
-    })
-    }
+//             `
+//         });
+//         document.getElementById('opiniones').innerHTML = output;
+//     })
+//     }
     
-    getData();
+//     getData();
     
     let reviews = [
         'Excelente atención',

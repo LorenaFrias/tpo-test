@@ -192,19 +192,22 @@
       <div class="contacto-container">
         <div class="form">
           <h2>contactanos</h2>
-          <form name="form-contact" netlify>
+          <form name="form-contact" method="post" netlify>
             <div class="control">
               <label for="name">nombre</label>
-              <input type="text" name="name" id="name">
+              <input type="text" name="name" id="name" autocomplete="name">
               <small></small>
             </div>
             <div class="control">
               <label for="email">email</label>
-              <input type="text" name="email" id="email">
+              <input type="text" name="email" id="email" autocomplete="email">
               <small></small>
             </div>
-            <label for="message"></label>
-            <textarea name="message" id="message"  placeholder="Dejanos tu mensaje o pregunta." cols="30" rows="10"></textarea>
+            <div class="control">
+              <label for="message"></label>
+              <textarea name="message" id="message"  placeholder="Dejanos tu mensaje o pregunta." cols="30" rows="10"></textarea>
+              
+            </div>
             <input type="submit" value="enviar">
 
           </form>

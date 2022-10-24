@@ -55,84 +55,67 @@ btn.forEach((elemento,clave)=>{
 
 // VALIDACION FORMULARIO
 
-const submitBtn = document.getElementById('submit-btn');
+const form = document.querySelector('#formulario')
+const nombre = document.getElementById('nombre');
+const email = document.getElementById('email');
+const mensaje = document.getElementById('message');
+const msjError = document.querySelector('.error');
 
-const validate = (e) => {
-  e.preventDefault();
-  const form = document.querySelector('form');
-  const nombre = document.getElementById('nombre');
-  const email = document.getElementById('email');
-  const mensaje = document.getElementById('message');
-  const msjError = document.querySelector('.error');
+form.addEventListener('submit', (e) => {
+e.preventDefault();
 
-    
-  if (nombre.value.trim() === "") {
-
-    msjError.textContent = 'Por favor ingrese su nombre';
-
-    nombre.style.border = '2px solid red'
-    nombre.focus();
-    return false;
-  }
-    
-  if (email.value.trim() === "") {
-
-    msjError.textContent = 'Por favor ingrese su email'
-
-    email.style.border = '2px solid red'
-    email.focus();
-    return false;
-  }
-
-  if (!emailIsValid(email.value.trim())) {
-
-    msjError.textContent = 'Por favor ingrese un email válido'
-    email.style.border = '2px solid red'
-    email.focus();
-    return false;
-  }
-
-  if (mensaje.value === "") {
-    msjError.textContent = 'Por favor ingrese su mensaje'
-    message.style.border = '2px solid red'
-    mensaje.focus();
-    return false;
-  } 
   
-  nombre.style.border = "2px solid green";
-  email.style.border = "2px solid green";
-  mensaje.style.border = "2px solid green";
-  msjError.textContent = '';
-    
-  return true; 
-    
+if (nombre.value.trim() === "") {
+
+msjError.textContent = 'Por favor ingrese su nombre';
+
+nombre.style.border = '2px solid red'
+nombre.focus();
+return false;
 }
 
-const emailIsValid = email => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+if (email.value.trim() === "") {
+
+msjError.textContent = 'Por favor ingrese su email'
+
+email.style.border = '2px solid red'
+email.focus();
+return false;
+} else {
+nombre.style.border = "2px solid green";
+msjError.textContent = '';
+
 }
 
-function clearInput() {
-    nombre.value = '';
-    email.value = '';
-    message.value = '';
+if (!emailIsValid(email.value.trim())) {
+
+msjError.textContent = 'Por favor ingrese un email válido'
+email.style.border = '2px solid red'
+email.focus();
+return false;
+} else {
+email.style.border = "2px solid green";
+msjError.textContent = '';
 }
 
-submitBtn.addEventListener('click', validate);
-submitBtn.addEventListener('click', clearInput);
-submitBtn.addEventListener('click', abrir)
+if (mensaje.value === "") {
+msjError.textContent = 'Por favor ingrese su mensaje'
+message.style.border = '2px solid red'
+mensaje.focus();
+return false;
+} else {
+mensaje.style.border = "2px solid green";
+msjError.textContent = '';
 
-const modal = document.querySelector('#modal');
-const closeModal = document.querySelector('#close-modal');
-
-function abrir() {
-  modal.showModal();
 }
 
-closeModal.addEventListener('click', ()=> {
-  modal.close();
+form.submit();
+ 
 })
 
+const emailIsValid = email => {
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 
 
 

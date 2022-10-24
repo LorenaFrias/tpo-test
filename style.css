@@ -545,6 +545,18 @@ blockquote {
     
 }
 
+.error {
+    display: inline-block;
+    color: red;
+}
+
+.titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 .form {
     grid-area: form;
     border: 2px solid var(--main-color);
@@ -555,10 +567,11 @@ blockquote {
 
 }
 
-.control small {
+/* .control small {
     display: block;
+    color: red;
     visibility: hidden;
-}
+} */
 
 .info {
     grid-area: info;
@@ -611,7 +624,14 @@ input, textarea {
     border-radius: .3em;
     border: 1px solid gray;
     box-sizing: border-box;
+    outline: none;
 }
+
+input:focus,
+textarea:focus {
+    border: 2px solid var(--main-color); 
+}
+
 
 input[type="submit"] {
     background-color: var(--accent-color);
@@ -628,7 +648,7 @@ input[type="submit"] {
     cursor: pointer;
 
 
-    box-shadow: 0 .7em 1em -.25em rgba(0, 0, 0, .25), 0 1em 4em -2em, 0 1em 4em -4em;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
     transition: all ease-in-out 200ms;
 }
 
@@ -636,6 +656,42 @@ input[type="submit"]:hover {
 transform: scale(1.1);
 box-shadow: 0 .7em 1em -.5em rgba(0, 0, 0, .25), 0 1em 3em -4em, 0 1em 4em -5em;
 }
+
+input[type="submit"]:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+
+}
+
+#modal {
+    max-width: 150ch;
+    padding: 4rem;
+    border-radius: 20px;
+
+    /* position: absolute;  */
+    left: 50%; 
+    top: 50%; 
+    transform: translate(-50%, -50%); 
+    margin: 0; 
+}
+
+.close-modal {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Quattrocento Sans', sans-serif;
+    border: none;
+    border-radius: 5em;
+    display: block;
+    padding: .8em 2em;
+    cursor: pointer;
+}
+
 
 iframe {
     width: 100%;
@@ -851,6 +907,10 @@ footer {
 
     .contacto-container {
         display: flex;
+        flex-direction: column;
+    }
+
+    .titulo {
         flex-direction: column;
     }
 

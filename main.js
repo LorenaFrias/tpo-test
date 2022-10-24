@@ -55,66 +55,87 @@ btn.forEach((elemento,clave)=>{
 
 // VALIDACION FORMULARIO
 
-let form = document.querySelector('form');
-let nombre = document.querySelector('#name');
-let mail = document.querySelector('#email');
-let message = document.querySelector('#message');
+const submitBtn = document.getElementById('submit-btn');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if (nombre.value.trim() ===''){
-        msgError(nombre, 'Ingrese su nombre, por favor.')
-    } else {
-        msgExito(nombre)
-    }
+const validate = (e) => {
+  e.preventDefault();
+  const form = document.querySelector('form');
+  const nombre = document.getElementById('nombre');
+  const email = document.getElementById('email');
+  const mensaje = document.getElementById('message');
+  const msjError = document.querySelector('.error');
 
-    if(mail.value.trim() === '') {
-        msgError(mail, 'Ingrese su email, por favor.')
-    } else if (isEmail(mail.value.trim())) {
-        msgExito(mail)
-        
-    } else {
-        msgError(mail, 'El email no es válido.')
-        
-    }
+    
+  if (nombre.value.trim() === "") {
 
-    if (message.value.trim() === "") {
-        msgError(message, 'Escriba un comentario o pregunta por favor')
-    } else {
-        msgExito(message)
-    }
+    msjError.textContent = 'Por favor ingrese su nombre';
 
-    myFunction();
+    nombre.style.border = '2px solid red'
+    nombre.focus();
+    return false;
+  }
+    
+  if (email.value.trim() === "") {
 
+    msjError.textContent = 'Por favor ingrese su email'
+
+    email.style.border = '2px solid red'
+    email.focus();
+    return false;
+  }
+
+  if (!emailIsValid(email.value.trim())) {
+
+    msjError.textContent = 'Por favor ingrese un email válido'
+    email.style.border = '2px solid red'
+    email.focus();
+    return false;
+  }
+
+  if (mensaje.value === "") {
+    msjError.textContent = 'Por favor ingrese su mensaje'
+    message.style.border = '2px solid red'
+    mensaje.focus();
+    return false;
+  } 
+  
+  nombre.style.border = "2px solid green";
+  email.style.border = "2px solid green";
+  mensaje.style.border = "2px solid green";
+  msjError.textContent = '';
+    
+  return true; 
+    
+}
+
+const emailIsValid = email => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function clearInput() {
+    nombre.value = '';
+    email.value = '';
+    message.value = '';
+}
+
+submitBtn.addEventListener('click', validate);
+submitBtn.addEventListener('click', clearInput);
+submitBtn.addEventListener('click', abrir)
+
+const modal = document.querySelector('#modal');
+const closeModal = document.querySelector('#close-modal');
+
+function abrir() {
+  modal.showModal();
+}
+
+closeModal.addEventListener('click', ()=> {
+  modal.close();
 })
 
-function msgError(element, mensaje) {
-    element.style.border = '2px solid red';
 
-    let control = element.parentElement;
-    let small = control.querySelector('small');
 
-    small.textContent = mensaje;
-    small.style.visibility = 'visible';
-}
 
-function msgExito(element){
-    element.style.border = '2px solid green';
-
-    let control = element.parentElement;
-    let small = control.querySelector('small');
-
-    small.style.visibility = 'hidden';
-}
-
-function isEmail(mail) {
-    let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(mail);
-}
-
-function myFunction() {
-    form.reset();
-}
 
 // API REST
 
